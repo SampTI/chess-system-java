@@ -4,11 +4,11 @@ package boardgame;
 
 public class Position {
     private int row;
-    private int calumn;
+    private int column;
 
-    public Position(int row, int calumn) {
+    public Position(int row, int column) {
         this.row = row;
-        this.calumn = calumn;
+        this.column = column;
     }
 
     public int getRow() {
@@ -19,15 +19,20 @@ public class Position {
         this.row = row;
     }
 
-    public int getCalumn() {
-        return calumn;
+    public int getColumn() {
+        return column;
     }
 
-    public void setCalumn(int calumn) {
-        this.calumn = calumn;
+    public void setColumn(int column) {
+        this.column = column;
+    }
+    public void setValue(int row, int column){
+        this.row = row;
+        this.column = column;
     }
     @Override
     public String toString(){
-        return row+", "+calumn;
+        return row+", "+column;
     }
+    
 }
