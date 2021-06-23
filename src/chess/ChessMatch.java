@@ -16,7 +16,7 @@ public class ChessMatch {
         board = new Board(8, 8); // tamanho do tabuleiro 8/8
         initialSetup(); //chamar o inicio da partida
     }
-    public ChessPiece[][] getpieces(){
+    public ChessPiece[][] getPieces(){
         ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
         for(int i=0; i < board.getRows(); i++){
             for(int j=0; j<board.getColumns(); j++){
@@ -24,6 +24,12 @@ public class ChessMatch {
             }
         }
         return mat;
+    }
+    
+    public boolean[][] possibleMoves(ChessPosition sourcePosition){
+        Position position = sourcePosition.toPosition();
+        validateSourcePosition(position);
+        return board.piece(position).possibleMoves();
     }
   
     public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition){
