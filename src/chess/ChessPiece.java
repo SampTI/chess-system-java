@@ -33,7 +33,7 @@ public abstract class ChessPiece extends Piece {
         moveCount--;
     }
     
-    public ChessPosition gertChessPosition(){
+    public ChessPosition getChessPosition(){
         return ChessPosition.fromPosition(position); //retornar a posição lida e transformar em posição de xadrez
     }
     
