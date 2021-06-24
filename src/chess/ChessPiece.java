@@ -20,6 +20,10 @@ public abstract class ChessPiece extends Piece {
         return color;
     }
     
+    public ChessPosition gertChessPosition(){
+        return ChessPosition.fromPosition(position); //retornar a posição lida e transformar em posição de xadrez
+    }
+    
     protected boolean IsThereOpponentPiece(Position position){
         ChessPiece p = (ChessPiece) getBoard().piece(position);
         return p != null && p.getColor() != color;
